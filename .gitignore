@@ -62,5 +62,5 @@ typings/
 
 .vscode
 
-restaurants/*/menu.json
+public/restaurants.json
 

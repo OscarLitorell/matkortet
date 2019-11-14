@@ -17,6 +17,7 @@ def main():
     now = datetime.datetime.now().isocalendar()
 
     menu = {
+        "restaurant": "Restaurang Seaside",
         "year": now[0],
         "week": now[1],
         "days": {}
@@ -44,9 +45,7 @@ def main():
 
         menu["days"][day] = dishes
     
-    fp = open(directory + "/menu.json", "w", encoding="utf-8")
-
-    json.dump(menu, fp, ensure_ascii=False)
+    print(json.dumps(menu, ensure_ascii=False))
 
 
 main()
