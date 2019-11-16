@@ -36,8 +36,8 @@ def main():
                     dish = dish.strip()
                     if dish != "":
                         dishes.append({
-                            "title": dish,
-                            "description": ""
+                            "title": "",
+                            "description": dish
                         })  
         except:
             dishes = ["N/A"]
