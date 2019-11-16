@@ -1,0 +1,92 @@
+
+:root {
+    --cool-blue: #2c37f4;
+    --cool-blue-t: #2c68f420;
+}
+
+body {
+    font-family: Nunito, sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    min-height: 100vh;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 16px;
+}
+
+header .right {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.space-between :not(:last-child) {
+    margin-right: 16px;
+}
+
+.space-between > * {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+footer {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    background: #eee;
+    display: flex;
+}
+
+footer a {
+    color: #000c;
+    margin: 0.5rem auto;
+}
+
+iframe {
+    border: none;
+    width: 100%;
+    flex-grow: 1;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+main, header {
+    width: calc(100% - 32px);
+    max-width: 1300px;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+a.button {
+    text-decoration: none;
+    font-weight: 500;
+    padding: 4px 0;
+    color: var(--cool-blue);
+}
+
+a.button:hover {
+    opacity: 70%;
+}
+
+.day {
+    padding: 1px 16px;
+    margin-bottom: 16px;
+    background: #f4f4f4;
+}
+
+.restaurant b {
+    color: #000A;
+}
+
