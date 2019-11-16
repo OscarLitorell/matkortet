@@ -13,5 +13,8 @@
     "morgan": "~1.9.1",
     "node-html-parser": "^1.1.16",
     "pug": "2.0.0-beta11"
+  },
+  "nodemonConfig": {
+    "ignore": ["public/"]
   }
 }
