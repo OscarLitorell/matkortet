@@ -1,7 +1,21 @@
 doctype html
-html
+<!DOCTYPE html>
+html(lang="en")
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    link(rel='stylesheet', href='/css/main.css')
+    title Matkortet
   body
-    block content
+    header
+      h2 Matkortet
+      .right.space-between
+        a.button(href="/") Dagens lunch
+        a.button(href="/map") Karta
+    main
+      block content
+    footer
+      a(href="mailto:oscar.litorell@elev.ga.ntig.se") Oscar Litorell
+
+
