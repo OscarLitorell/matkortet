@@ -10,7 +10,7 @@ npm install
 
 När du installerat python behöver du även installera BeautifulSoup4:
 ```
-pip install BeautifulSoup4
+pip install beautifulsoup4
 ```
 
 För att starta servern på Windows, skriv:
