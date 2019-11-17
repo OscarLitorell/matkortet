@@ -20,7 +20,9 @@ const days = [
 ]
 
 capitalizeString = function(text) {
-    return text[0].toUpperCase() + text.substring(1)
+    words = text.trim().split(/\s+/)
+    if (words.length === 1 && words[0] === "") return ""
+    return words.map(word => word[0].toUpperCase() + word.substring(1).toLowerCase()).join(" ")
 }
 
 const menuParent = document.getElementById("menu-container")
@@ -42,12 +44,14 @@ function renderDay(parent, day, data) {
 
     let dayElement = document.createElement("section")
     dayElement.classList.add("day")
+    dayElement.classList.add("box-shadow")
     dayElement.id = days[day]
     parent.appendChild(dayElement)
 
     let dayTitle = document.createElement("h2")
-    dayTitle.innerText = capitalizeString(`${swedishDays[day]} vecka ${week}`)
+    dayTitle.innerText = `${capitalizeString(swedishDays[day])} vecka ${week}`
     dayElement.appendChild(dayTitle)
+    restaurantsDiv = document.createElement("div")
 
     data.forEach(restaurant => {
         let restaurantDiv = document.createElement("div")
@@ -59,7 +63,7 @@ function renderDay(parent, day, data) {
         restaurantDiv.appendChild(restaurantTitle)
 
         restaurant.days[day].forEach(dish => {
-            let title = dish.title
+            let title = capitalizeString(dish.title)
             let description = dish.description
             let dishText = document.createElement("p")
             dishText.innerHTML = `<b>${title}</b>${title ? " -" : ""} ${description}`

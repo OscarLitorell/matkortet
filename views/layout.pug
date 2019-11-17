@@ -8,14 +8,15 @@ html(lang="en")
     link(rel='stylesheet', href='/css/main.css')
     title Matkortet
   body
-    header
-      h2 Matkortet
-      .right.space-between
-        a.button(href="/") Dagens lunch
-        a.button(href="/map") Karta
+    header.box-shadow
+      .header-content
+        h2 Matkortet
+        .right.space-between
+          a.button(href="/") Dagens lunch
+          a.button(href="/map") Karta
     main
       block content
-    footer
+    footer.box-shadow
       a(href="mailto:oscar.litorell@elev.ga.ntig.se") Oscar Litorell
 
 

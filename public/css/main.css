@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500,700|Nunito:400,700&display=swap');
 
 :root {
     --cool-blue: #2c37f4;
@@ -10,12 +11,20 @@ body {
     flex-direction: column;
     margin: 0;
     min-height: 100vh;
+    background: aliceblue;
+}
+
+h2, h3, A.button {
+    font-family: Montserrat, sans-serif;
 }
 
 header {
     position: sticky;
     top: 0;
     background: #fff;
+}
+
+.header-content {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
@@ -23,7 +32,7 @@ header {
     padding: 0 16px;
 }
 
-header .right {
+header .header-content .right {
     display: flex;
     flex-wrap: wrap;
 }
@@ -49,21 +58,14 @@ footer a {
     color: #000c;
     margin: 0.5rem auto;
 }
-
-iframe {
-    border: none;
-    width: 100%;
-    flex-grow: 1;
-}
-
 main {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
 
-main, header {
-    width: calc(100% - 32px);
+main, header .header-content {
+    width: 100%;
     max-width: 1300px;
     margin: auto;
     box-sizing: border-box;
@@ -80,13 +82,31 @@ a.button:hover {
     opacity: 70%;
 }
 
+
+.box-shadow {
+    box-shadow: 0px 0px 20px -4px rgba(0,0,0,0.2);
+}
+
+
 .day {
     padding: 1px 16px;
-    margin-bottom: 16px;
+    margin: 16px 0;
     background: #f4f4f4;
 }
 
 .restaurant b {
-    color: #000A;
+    color: var(--cool-blue);
 }
 
+iframe {
+    border: none;
+    width: 100%;
+    flex-grow: 1;
+    margin: 16px 0;
+}
+
+@media screen and (max-width: 1300px) {
+    iframe {
+        margin: 0;
+    }
+}

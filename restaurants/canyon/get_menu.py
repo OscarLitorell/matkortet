@@ -6,6 +6,13 @@ import datetime
 from os import path
 directory = path.dirname(path.realpath(__file__))
 
+titles = [
+    "KÖTT",
+    "FISK",
+    "VEGETARISKT",
+    "ASIATISKT",
+    "TACOS"
+]
 
 def main():
     html = request.urlopen("http://restaurang-einstein.se").read().decode()
@@ -30,15 +37,20 @@ def main():
         
         try:
             html_dishes = relevant_html[i].contents[1].contents[0].contents
+            i = 0
             for html_dish in html_dishes:
                 dish = html_dish.string
                 if dish != None:
                     dish = dish.strip()
                     if dish != "":
+                        title = ""
+                        if i < len(titles):
+                            title = titles[i]
                         dishes.append({
-                            "title": "",
+                            "title": title,
                             "description": dish
-                        })  
+                        })
+                i += 1
         except:
             dishes = ["N/A"]
 
