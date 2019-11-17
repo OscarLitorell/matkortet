@@ -95,7 +95,7 @@ a.button:hover {
 }
 
 .restaurant b {
-    color: var(--cool-blue);
+    color: #444;
 }
 
 iframe {
