@@ -30,7 +30,7 @@ const menuParent = document.getElementById("menu-container")
 function getJson() {
     let xhr = new XMLHttpRequest()
     
-    xhr.open("GET", "/restaurants.json")
+    xhr.open("GET", "/menus.json")
     xhr.responseType = "json"
     xhr.onload = renderMenu
     xhr.send()

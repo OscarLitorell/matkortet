@@ -24,7 +24,7 @@ def main():
 
     menus = "".join(menus.split("\n"))
 
-    write("public/restaurants.json", menus)
+    write("public/menus.json", menus)
 
 main()
 
