@@ -83,12 +83,12 @@ a.button:hover {
 }
 
 
-.box-shadow {
+.card, .box-shadow {
     box-shadow: 1px 1px 16px 0px #0001;
 }
 
 
-.day {
+.card {
     padding: 1px 16px;
     margin: 16px 0;
     background: #f4f4f4;
