@@ -44,7 +44,7 @@ fetch("https://api.vasttrafik.se/token", {
     method: "POST",
     headers: {
         "Content-Type": "application/x-www-form-urlencoded",
-        Authorization: "Basic eHRzVU9SbUtpM05uWF9SZEptOG9EZmtud1ZBYTpGZ21qejI3M2N2RVFWVFhEZEg4M1dSa0xlV0Fh"
+        Authorization: "Basic <key>"
     },
     body: "grant_type=client_credentials"
 }).then(res => {
