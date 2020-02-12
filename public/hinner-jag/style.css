@@ -1,0 +1,114 @@
+:root {
+    --trip-color: #2da1ee;
+}
+
+input[type="number"] {
+    width: 2rem;
+}
+
+.toggler {
+    color: #555;
+    cursor: pointer;
+}
+
+.toggler:hover {
+    text-decoration: underline;
+}
+
+.trips > div {
+    flex-wrap: wrap;
+    display: none;
+}
+.trips > div.visible {
+    display: flex;
+}
+
+.trip {
+    max-width: 300px;
+    width: 100%;
+}
+
+.trip p, .trip span {
+    font-size: 16px;
+    margin: 4px 0;
+}
+
+.trip p.mode {
+    margin: 8px 0;
+}
+
+.trip .stop p {
+    font-weight: bold;
+}
+
+.trip > * {
+    padding-left: 3rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.timeline {
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    top: 0;
+    left: calc(1rem - 1px);
+    display: flex;
+    flex-direction: column;
+}
+
+.timeline div.line {
+    flex: 1;
+    position: relative;
+    background: 2px solid rgba(152, 175, 190, 0);
+}
+
+.timeline div.line.active {
+    border-left: 2px solid;
+    border-color: var(--trip-color);
+}
+
+
+.point {
+    box-sizing: border-box;
+    width: 0.8rem;
+    height: 0.8rem;
+    position: absolute;
+    background: white;
+    border-radius: 100vmax;
+    border: 2px solid;
+    border-color: var(--trip-color);
+    z-index: 1;
+}
+
+.point.filled {
+    width: 1rem;
+    height: 1rem;
+    background: var(--trip-color);
+}
+
+.timeline-center {
+    position: absolute;
+    width: 2rem;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.timeline-center span {
+    padding: 0 4px;
+    border-radius: 2px;
+    font-weight: bold;
+}
+
+
+header {
+    z-index: 4;
+}
+
+

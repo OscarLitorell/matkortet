@@ -30,7 +30,7 @@ const menuParent = document.getElementById("menu-container")
 function getJson() {
     let xhr = new XMLHttpRequest()
     
-    xhr.open("GET", "/restaurants.json")
+    xhr.open("GET", "/menus.json")
     xhr.responseType = "json"
     xhr.onload = renderMenu
     xhr.send()
@@ -43,7 +43,7 @@ function renderDay(parent, day, data) {
     let week = data[0].week
 
     let dayElement = document.createElement("section")
-    dayElement.classList.add("day")
+    dayElement.classList.add("card")
     dayElement.classList.add("box-shadow")
     dayElement.id = days[day]
     parent.appendChild(dayElement)

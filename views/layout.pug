@@ -7,13 +7,15 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     link(rel='stylesheet', href='/css/main.css')
     title Matkortet
+    block head
   body
     header.box-shadow
       .header-content
         h2 Matkortet
         .right.space-between
           a.button(href="/") Dagens lunch
-          a.button(href="/map") Karta
+          a.button(href="/karta") Karta
+          a.button(href="/hinner-jag") Hinner jag?
     main
       block content
     footer.box-shadow
