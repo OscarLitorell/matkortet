@@ -1,9 +1,6 @@
-
 const https = require("https")
-const fs = require("fs")
 
-
-exports.get = (deviceId) => {
+exports.get = (auth, deviceId) => {
     let options = {
         hostname: 'api.vasttrafik.se',
         port: 443,
@@ -11,7 +8,7 @@ exports.get = (deviceId) => {
         method: "POST",
         headers: {
             "Content-Type": "application/x-www-form-urlencoded",
-            Authorization: "Basic " + fs.readFileSync("västtrafik-auth.txt", "utf-8")
+            Authorization: "Basic " + auth
         }
     }
     
@@ -19,7 +16,7 @@ exports.get = (deviceId) => {
 
     // TODO: reject
     return new Promise((resolve, reject) => {
-        const req = https.request(options, (res) => {
+        let req = https.request(options, (res) => {
             let data = ""
             res.on("data", d => data += d)
             res.on("end", () => {
@@ -32,9 +29,9 @@ exports.get = (deviceId) => {
     })
 }
 
-exports.getNew = () => {
+exports.getNew = (auth) => {
     let deviceId = "device_" + new Date().getTime()
-    return exports.get(deviceId)
+    return exports.get(auth, deviceId)
 }
 
 
