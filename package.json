@@ -13,7 +13,10 @@
     "morgan": "~1.9.1",
     "node-html-parser": "^1.1.16",
     "pug": "^2.0.4",
-    "reseplaneraren": "file:local_modules/reseplaneraren"
+    "reseplaneraren": "file:local_modules/reseplaneraren",
+    "reseplaneraren-token": "file:local_modules/reseplaneraren-token",
+    "osm-walking": "file:local_modules/osm-walking",
+    "sqlite3": "^4.1.1"
   },
   "nodemonConfig": {
     "ignore": [
