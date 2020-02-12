@@ -56,6 +56,11 @@ function getTrips() {
     let startTime = document.getElementById("startTime").value
     let endTime = document.getElementById("endTime").value
 
+    let margin = document.getElementById("margin").value * 60
+
+    startTime = timeDelta(startTime, margin)
+    endTime = timeDelta(endTime, -margin)
+
     Array.from(document.getElementById("restaurants").children).forEach(async (restaurantElement) => {
         let id = restaurantElement.id.split("-")[1]
 
@@ -106,3 +111,24 @@ window.addEventListener("load", () => {
     addRestaurants()
 })
 
+
+
+/**
+ * 
+ * @param {string} time 
+ * @param {*} seconds 
+ */
+function timeDelta(time, seconds) {
+    let out = new Date(new Date("2000-01-01 " + time).getTime() + seconds * 1000)
+    return getTime(out)
+}
+
+/**
+ * Get the time as a string.
+ * @param {date} date 
+ * @returns {string} "HH:MM"
+ */
+function getTime(date) {
+    return String(date.getHours()).padStart(2, '0') + ":" + String(date.getMinutes()).padStart(2, '0')
+
+}

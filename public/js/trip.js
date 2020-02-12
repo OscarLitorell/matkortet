@@ -73,10 +73,23 @@ function createLegHtml(leg) {
         title.innerText += ` mot ${leg.direction}`
         let lineNumber= createLineNumberHtml(leg)
         root.appendChild(lineNumber)
+    } else {
+        let wait = timeBetween(leg.Origin.time, leg.Destination.time)
+        title.innerText += ` ${wait} minuter`
     }
 
 
     return root
+}
+
+
+/**
+ * The time in minutes between two points in time
+ * @param {string} time1 "HH:MM"
+ * @param {string} time2 "HH:MM"
+ */
+function timeBetween(time1, time2) {
+    return (((new Date("2000-01-01 " + time2) - new Date("2000-01-01 " + time1)) / 1000 / 60) + 24 * 60) % (24 * 60)
 }
 
 function createLineNumberHtml(leg) {

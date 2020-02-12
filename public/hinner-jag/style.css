@@ -2,6 +2,9 @@
     --trip-color: #2da1ee;
 }
 
+input[type="number"] {
+    width: 2rem;
+}
 
 .toggler {
     color: #555;
