@@ -26,7 +26,7 @@ header {
 
 .header-content {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 0 16px;
@@ -82,6 +82,27 @@ a.button:hover {
     opacity: 70%;
 }
 
+input.button {
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
+    width: min-content;
+    margin: 8px 0;
+    padding: 4px 12px;
+    border-radius: 100vmax;
+    border: none;
+    background: #007eff;
+    color: white;
+}
+
+input.button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+input.button:active {
+    opacity: 0.7;
+}
+
 
 .card, .box-shadow {
     box-shadow: 1px 1px 16px 0px #0001;
@@ -89,7 +110,7 @@ a.button:hover {
 
 
 .card {
-    padding: 1px 16px;
+    padding: 1px 16px 16px 16px;
     margin: 16px 0;
     background: #f4f4f4;
 }
