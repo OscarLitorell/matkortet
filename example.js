@@ -1,10 +1,11 @@
-var Reseplaneraren = require('reseplaneraren')
-const Token = require("./token.js")
+const Reseplaneraren = require('reseplaneraren')
+const Token = require("reseplaneraren-token")
+const fs = require("fs")
 
 // Set OAuth token
-Token.get().then(token => {
+let auth = fs.readFileSync("västtrafik-auth.txt", "utf-8")
+Token.get(auth).then(token => {
     Reseplaneraren.setToken(token)
-
 
     let apiInstance = new Reseplaneraren.LocationApi();
 
@@ -12,7 +13,6 @@ Token.get().then(token => {
         if (error) {
             console.error(error)
         } else {
-            let data = JSON.parse(response.text)
             console.log('API called successfully. Returned data: ' + response.text)
         }
     }
