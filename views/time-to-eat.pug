@@ -1,0 +1,19 @@
+extends layout
+
+block head
+    script(src="/js/trip.js")
+    link(rel="stylesheet", href="style.css")
+
+block content
+    section.card
+        h2 Hinner jag?
+        label
+            | Lunchen börjar: 
+            input#startTime(type="time" value="12:00")
+        br
+        label
+            | Lunchen slutar: 
+            input#endTime(type="time" value="13:00")
+        br
+        input.button(type="button", onclick="getTrips()", value="Kolla var jag hinner äta")
+        script(src="/js/time-to-eat.js")
