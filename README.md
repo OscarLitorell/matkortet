@@ -1,17 +1,9 @@
 # Matkortet
 En hemsida där man kan se vad dagens rätt är på olika matställen på matkortet hos NTI-gymnasiet Johanneberg.
 
-För att köra programmet krävs [node.js](https://nodejs.org/) och [python 3](https://www.python.org/) installerat.
+För att köra programmet krävs [node.js](https://nodejs.org/) installerat.
 
-När du installerat node.js, navigera till mappen i kommandotolken och skriv in:
-``` 
-npm install
-```
-
-När du installerat python behöver du även installera BeautifulSoup4:
-```
-pip install beautifulsoup4
-```
+När du installerat node.js, navigera till mappen i kommandotolken och skriv in `npm install` för att installera alla nödvändiga moduler.
 
 För att starta servern på Windows, skriv:
 ```

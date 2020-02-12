@@ -6,16 +6,18 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
+    "glob": "^7.1.6",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "node-html-parser": "^1.1.16",
+    "osm-walking": "file:local_modules/osm-walking",
     "pug": "^2.0.4",
     "reseplaneraren": "file:local_modules/reseplaneraren",
     "reseplaneraren-token": "file:local_modules/reseplaneraren-token",
-    "osm-walking": "file:local_modules/osm-walking",
     "sqlite3": "^4.1.1"
   },
   "nodemonConfig": {
