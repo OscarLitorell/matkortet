@@ -5,7 +5,7 @@ const Token = require("reseplaneraren-token")
 const fs = require("fs")
 const osm = require("osm-walking")
 
-let auth = fs.readFileSync("västtrafik-auth.txt", "utf-8")
+let auth = process.env.VASTTRAFIK_KEY
 
 let db = new sqlite3.Database("restaurants.db")
 
