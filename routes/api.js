@@ -2,7 +2,6 @@
 const sqlite3 = require("sqlite3").verbose()
 const Reseplaneraren = require('reseplaneraren')
 const Token = require("reseplaneraren-token")
-const fs = require("fs")
 const osm = require("osm-walking")
 
 let auth = process.env.VASTTRAFIK_KEY
@@ -53,7 +52,7 @@ const api = {
         let origin = result.origin
         let destination = result.destination
         let token = result.token
-        
+
         Reseplaneraren.setToken(token)
 
         let trips = await allPromiseValues({
