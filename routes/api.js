@@ -25,7 +25,7 @@ module.exports.attachRoutes = (router) => {
 
 const api = {
     "restaurants": async (req, res) => {
-        db.all("SELECT * FROM restaurants", (err, rows) => {
+        db.all("SELECT * FROM restaurants ORDER BY name", (err, rows) => {
             res.json(rows)
         })
     },
