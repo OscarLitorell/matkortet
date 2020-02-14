@@ -141,6 +141,9 @@ class Trip {
         try {
             let index = last ? rawTransitTrip.TripList.Trip.length - 1 : 0
             legs = rawTransitTrip.TripList.Trip[index].Leg
+
+            legs = legs.filter(leg => leg.Origin.name !== leg.Destination.name)
+
         } catch (error) {
             return null
         }
