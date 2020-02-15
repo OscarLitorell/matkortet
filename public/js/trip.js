@@ -89,7 +89,7 @@ function createLegHtml(leg) {
  * @param {string} time2 "HH:MM"
  */
 function timeBetween(time1, time2) {
-    return (((new Date("2000-01-01T" + time2) - new Date("2000-01-01T" + time1)) / 1000 / 60) + 24 * 60) % (24 * 60)
+    return (new Date("2000-01-01T" + time2) - new Date("2000-01-01T" + time1)) / (60 * 1000)
 }
 
 function createLineNumberHtml(leg) {
