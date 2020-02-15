@@ -73,16 +73,17 @@ async function addRestaurants() {
 async function getTrip(restaurantElement, journeyElement, restaurantId) {
     let startTime = document.getElementById("startTime").value
     let endTime = document.getElementById("endTime").value
-
+    
     let margin = document.getElementById("margin").value * 60
-
+    
     startTime = timeDelta(startTime, margin)
     endTime = timeDelta(endTime, -margin)
-
+    
     let id = restaurantId
-
+    
     let res = await fetch(`/api/journey?destinationId=${id}&startTime=${startTime}&endTime=${endTime}`)
     let journey = new Journey(await res.json())
+
 
     let tripThereHtml = journey.tripThere.createHtml()
     let tripBackHtml = journey.tripBack.createHtml()
@@ -94,44 +95,6 @@ async function getTrip(restaurantElement, journeyElement, restaurantId) {
     journeyElement.appendChild(tripBackHtml)
 }
 
-// function getTrips() {
-//     let startTime = document.getElementById("startTime").value
-//     let endTime = document.getElementById("endTime").value
-
-//     let margin = document.getElementById("margin").value * 60
-
-//     startTime = timeDelta(startTime, margin)
-//     endTime = timeDelta(endTime, -margin)
-
-//     Array.from(document.getElementById("restaurants").children).forEach(async (restaurantElement) => {
-//         let id = restaurantElement.id.split("-")[1]
-
-//         let res = await fetch(`/api/journey?destinationId=${id}&startTime=${startTime}&endTime=${endTime}`)
-//         let journey = new Journey(await res.json())
-
-//         let tripThereHtml = journey.tripThere.createHtml()
-//         let tripBackHtml = journey.tripBack.createHtml()
-        
-//         let root = restaurantElement.getElementsByClassName("trips")[0]
-//         root.innerHTML = ""
-
-//         let toggler = elem("p", "toggler")
-//         root.appendChild(toggler)
-        
-//         let journeyElement = elem("div")
-//         root.appendChild(journeyElement)
-
-
-//         createToggler(toggler, e => e.innerText = "Dölj tidsplan", e => e.innerText = "Visa tidsplan", journeyElement, "visible")
-
-//         let timeToEatElement = restaurantElement.getElementsByClassName("time-to-eat")[0]
-//         timeToEatElement.innerHTML = `Tid att äta: <b>${Math.round(journey.timeToEat)}</b> minuter (${journey.tripThere.destination.time} till ${journey.tripBack.origin.time}).`
-
-//         journeyElement.appendChild(tripThereHtml)
-//         journeyElement.appendChild(tripBackHtml)
-
-//     })
-// }
 
 /**
  * When clicking a certain element, toggle the class of another element, and do somwthing to the current element.
