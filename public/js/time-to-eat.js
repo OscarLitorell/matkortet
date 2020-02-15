@@ -125,7 +125,7 @@ window.addEventListener("load", () => {
  * @param {*} seconds 
  */
 function timeDelta(time, seconds) {
-    let out = new Date(new Date("2000-01-01 " + time).getTime() + seconds * 1000)
+    let out = new Date(new Date("2000-01-01T" + time).getTime() + seconds * 1000)
     return getTime(out)
 }
 
