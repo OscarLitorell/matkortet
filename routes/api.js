@@ -160,7 +160,8 @@ class Trip {
 
         let journey = {
             tripThere: null,
-            tripBack: null
+            tripBack: null,
+            errors: []
         }
 
 
@@ -174,6 +175,8 @@ class Trip {
         } else {
             journey.tripBack = walkBack
         }
+
+        if (!rawTrips.walk) journey.errors.push("noWalk")
 
         return journey
     }

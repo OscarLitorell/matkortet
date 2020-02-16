@@ -3,6 +3,7 @@ class Journey {
     constructor(obj) {
         this.tripThere = obj.tripThere ? new Trip(obj.tripThere.legs) : null
         this.tripBack = obj.tripBack ? new Trip(obj.tripBack.legs) : null
+        this.errors = obj.errors
     }
 
     get timeToEat() {
