@@ -85,14 +85,18 @@ async function getTrip(restaurantElement, journeyElement, restaurantId) {
     let journey = new Journey(await res.json())
 
 
-    let tripThereHtml = journey.tripThere.createHtml()
-    let tripBackHtml = journey.tripBack.createHtml()
+    if (!journey.completeJourney) {
+        journeyElement.innerHTML = "Kunde inte hitta rutt."
+    } else {
+        let tripThereHtml = journey.tripThere.createHtml()
+        let tripBackHtml = journey.tripBack.createHtml()
+        
+        let timeToEatElement = restaurantElement.getElementsByClassName("time-to-eat")[0]
+        timeToEatElement.innerHTML = `Tid att äta: <b>${Math.round(journey.timeToEat)}</b> minuter (${journey.tripThere.destination.time} till ${journey.tripBack.origin.time}).`
     
-    let timeToEatElement = restaurantElement.getElementsByClassName("time-to-eat")[0]
-    timeToEatElement.innerHTML = `Tid att äta: <b>${Math.round(journey.timeToEat)}</b> minuter (${journey.tripThere.destination.time} till ${journey.tripBack.origin.time}).`
-
-    journeyElement.appendChild(tripThereHtml)
-    journeyElement.appendChild(tripBackHtml)
+        journeyElement.appendChild(tripThereHtml)
+        journeyElement.appendChild(tripBackHtml)
+    }
 }
 
 

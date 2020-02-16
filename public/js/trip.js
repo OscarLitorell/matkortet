@@ -1,12 +1,17 @@
 
 class Journey {
     constructor(obj) {
-        this.tripThere = new Trip(obj.tripThere.legs)
-        this.tripBack = new Trip(obj.tripBack.legs)
+        this.tripThere = obj.tripThere ? new Trip(obj.tripThere.legs) : null
+        this.tripBack = obj.tripBack ? new Trip(obj.tripBack.legs) : null
     }
 
     get timeToEat() {
+        if (!this.completeJourney) return "?"
         return timeBetween(this.tripThere.destination.time, this.tripBack.origin.time)
+    }
+
+    get completeJourney() {
+        return (this.tripThere && this.tripBack)
     }
 }
 

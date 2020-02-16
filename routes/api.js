@@ -112,6 +112,8 @@ class Trip {
     }
 
     static walk(obj, originName, destinationName, time, timeAtArrival=false) {
+        if (!obj) return null
+
         let duration
         
         try {
@@ -156,15 +158,18 @@ class Trip {
         let walkThere = Trip.walk(rawTrips.walk, origin.name, destination.name, startTime)
         let walkBack = Trip.walk(rawTrips.walk, destination.name, origin.name, endTime, true)
 
-        let journey = {}
+        let journey = {
+            tripThere: null,
+            tripBack: null
+        }
 
 
-        if (transitThere && before(transitThere.destination.time, walkThere.destination.time)) {
+        if (transitThere && (!walkThere || before(transitThere.destination.time, walkThere.destination.time))) {
             journey.tripThere = transitThere
         } else {
             journey.tripThere = walkThere
         }
-        if (transitBack && !before(transitBack.origin.time, walkBack.origin.time)) {
+        if (transitBack && (!walkBack || !before(transitBack.origin.time, walkBack.origin.time))) {
             journey.tripBack = transitBack
         } else {
             journey.tripBack = walkBack

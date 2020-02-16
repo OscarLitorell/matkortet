@@ -14,7 +14,11 @@ exports.trip = (origin, destination) => {
             res.on("data", d => data += d)
             res.on("error", (error) => reject(error))
             res.on("end", () => {
-                resolve(JSON.parse(data))
+                try {
+                    resolve(JSON.parse(data))
+                } catch (e) {
+                    resolve(null)
+                }
             })
         })
         req.end()
