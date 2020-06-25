@@ -19,11 +19,15 @@ Servern behöver startas med nyckeln som miljövariabeln VASTTRAFIK_KEY. Detta g
 
 För att starta servern på Windows, skriv:
 ```bat
-SET VASTTRAFIK_KEY=<nyckel> && npm start
+SET VASTTRAFIK_KEY=<nyckel> && SET PORT=<port> && npm start
 ```
 För att starta den på MacOS eller Linux, skriv:
 ```sh
-VASTTRAFIK_KEY=<nyckel> npm start
+VASTTRAFIK_KEY=<nyckel> PORT=<port> npm start
+```
+Root-privilegier krävs för att använda port 80:
+```sh
+sudo VASTTRAFIK_KEY=<nyckel> PORT=80 npm start
 ```
 
 För att sedan se hemsidan, navigera till [localhost](http://localhost) i din webbläsare.
