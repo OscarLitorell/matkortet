@@ -15,7 +15,7 @@
     "morgan": "~1.9.1",
     "node-html-parser": "^1.2.20",
     "osm-walking": "file:local_modules/osm-walking",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "reseplaneraren": "file:local_modules/reseplaneraren",
     "reseplaneraren-token": "file:local_modules/reseplaneraren-token",
     "sqlite3": "^4.2.0"
