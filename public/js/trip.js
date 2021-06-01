@@ -104,8 +104,8 @@ function createLineNumberHtml(leg) {
 
     let span = elem("span")
     span.innerText = leg.sname
-    span.style.background = leg.fgColor
-    span.style.color = leg.bgColor
+    span.style.background = leg.bgColor
+    span.style.color = leg.fgColor
 
     root.appendChild(span)
 
